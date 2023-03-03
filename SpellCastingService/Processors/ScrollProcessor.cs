@@ -1,5 +1,7 @@
-﻿using SpellCastingService.Factories;
+﻿using Microsoft.AspNetCore.Authorization;
+using SpellCastingService.Factories;
 using SpellCastingService.Models;
+using SpellCastingService.Models.Spells;
 using SpellCastingService.Publishers;
 
 namespace SpellCastingService.Processors
@@ -27,7 +29,34 @@ namespace SpellCastingService.Processors
         {
             Console.WriteLine($"{nameof(ScrollProcessor)} received {scrolls.Count()} scrolls for processing");
             
+            foreach (var scroll in scrolls)
+            {
+                var spell = _spellFactory.CraftSpell(scroll);
 
+                CastSpell(spell);
+            }
+        }
+
+        private void CastSpell(Spell spell)
+        {
+            switch(spell.SpellType)
+            {
+                case SpellType.Offensive:
+                    _offensiveCaster.Cast(spell);
+                    break;
+
+                case SpellType.Defensive:
+                    _defensiveCaster.Cast(spell);
+                    break;
+
+                case SpellType.Resource:
+                    _resourceCaster.Cast(spell);
+                    break;
+
+                default:
+                    Console.WriteLine("The scroll is undefined and fizzles.");
+                    break;
+            }
         }
     }
 }

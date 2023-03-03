@@ -15,8 +15,11 @@ namespace SpellCastingService.Controllers
             _scrollProcessor = scrollProcessor;
         }
 
-        [Route("cast")]
         [HttpGet]
+        public string Get() => "Spell Casting Service Running";
+
+        [Route("cast")]
+        [HttpPost]
         public IActionResult Cast([FromBody] IEnumerable<Scroll> scrolls)
         {
             try
