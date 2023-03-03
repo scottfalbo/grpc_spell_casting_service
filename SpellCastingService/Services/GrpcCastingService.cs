@@ -27,16 +27,22 @@ namespace SpellCastingService.Services
 
             try
             {
-                Console.WriteLine("Starting Spell Casting Service.");
+                Console.WriteLine("Starting Spell Casting Service, gRPC.");
 
                 _scrollProcessor.ProcessScrolls(scrolls);
 
-                Console.WriteLine($"Successfully Processed {scrolls.Count} scrolls.");
+                var message = $"Successfully Processed {scrolls.Count} scrolls.";
+                Console.WriteLine(message);
+
+                responseStatus.Message = message;
                 return responseStatus;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Something went amiss, {ex.Message}");
+                var message = $"Something went amiss, {ex.Message}";
+                Console.WriteLine(message);
+
+                responseStatus.Message = message;
                 return responseStatus;
             }
         }

@@ -1,5 +1,7 @@
 # grpc_spell_casting_service
 
+`https://localhost:xxxx/spellcasting/cast`
+
 ```json
 [
     {
@@ -15,6 +17,27 @@
         "spellType": 1
     }
 ]
+```
+
+`grpc://localhost:xxxx`
+
+```json
+{
+    "Scrolls": [
+        {
+            "UniqueGlyph": "001",
+            "CastingPhrase": "shaboomy",
+            "MagicType": 1,
+            "SpellType": 1
+        },
+        {
+            "UniqueGlyph": "002",
+            "CastingPhrase": "shaboomy",
+            "MagicType": 0,
+            "SpellType": 1
+        }
+    ]
+}
 ```
 
 0.0: Magic Missle

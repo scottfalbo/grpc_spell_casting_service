@@ -24,7 +24,7 @@ namespace SpellCastingService.Controllers
         {
             try
             {
-                Console.WriteLine("Starting Spell Casting Service.");
+                Console.WriteLine("Starting Spell Casting Service, HTTP.");
 
                 _scrollProcessor.ProcessScrolls(scrolls);
 
