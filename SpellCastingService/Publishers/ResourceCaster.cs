@@ -6,7 +6,8 @@ namespace SpellCastingService.Publishers
     {
         public void Cast(Spell spell)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(ResourceCaster)} has been evoked.");
+            Console.WriteLine($"Casting {spell.Name}, {spell.Description}");
         }
     }
 }
