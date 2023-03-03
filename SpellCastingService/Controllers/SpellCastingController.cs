@@ -36,7 +36,6 @@ namespace SpellCastingService.Controllers
                 Console.WriteLine($"Something went amiss, {ex.Message}");
                 return BadRequest(ex);
             }
-            
         }
     }
 }
