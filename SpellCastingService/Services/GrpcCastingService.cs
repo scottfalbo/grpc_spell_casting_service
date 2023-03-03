@@ -31,7 +31,7 @@ namespace SpellCastingService.Services
 
                 _scrollProcessor.ProcessScrolls(scrolls);
 
-                Console.WriteLine($"Successfully Processed {scrolls.Count()} scrolls.");
+                Console.WriteLine($"Successfully Processed {scrolls.Count} scrolls.");
                 return responseStatus;
             }
             catch (Exception ex)
