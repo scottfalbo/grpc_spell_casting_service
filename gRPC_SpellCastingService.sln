@@ -5,6 +5,11 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingService", "SpellCastingService\SpellCastingService.csproj", "{425A9DCF-C8D7-422B-AA17-711C3554DD3F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{497C66EF-2010-496A-B33A-C70B4E5C0BBB}"
+	ProjectSection(SolutionItems) = preProject
+		SpellCasting.proto = SpellCasting.proto
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
