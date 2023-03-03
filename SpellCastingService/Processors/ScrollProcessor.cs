@@ -44,15 +44,15 @@ namespace SpellCastingService.Processors
             switch (spell.SpellType)
             {
                 case SpellType.Offensive:
-                    _offensiveCaster.Cast(spell);
+                    _offensiveCaster.Evoke(spell);
                     break;
 
                 case SpellType.Defensive:
-                    _defensiveCaster.Cast(spell);
+                    _defensiveCaster.Evoke(spell);
                     break;
 
                 case SpellType.Resource:
-                    _resourceCaster.Cast(spell);
+                    _resourceCaster.Evoke(spell);
                     break;
 
                 default:

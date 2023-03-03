@@ -27,11 +27,11 @@ namespace SpellCastingService.Services
 
             try
             {
-                Console.WriteLine("Starting Spell Casting Service, gRPC.");
+                Console.WriteLine("\nStarting Spell Casting Service, gRPC.");
 
                 _scrollProcessor.ProcessScrolls(scrolls);
 
-                var message = $"Successfully Processed {scrolls.Count} scrolls.";
+                var message = $"Successfully Processed {scrolls.Count} scrolls.\n";
                 Console.WriteLine(message);
 
                 responseStatus.Message = message;

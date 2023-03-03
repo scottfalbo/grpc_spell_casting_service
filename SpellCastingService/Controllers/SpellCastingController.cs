@@ -24,12 +24,13 @@ namespace SpellCastingService.Controllers
         {
             try
             {
-                Console.WriteLine("Starting Spell Casting Service, HTTP.");
+                Console.WriteLine("\nStarting Spell Casting Service, HTTP.");
 
                 _scrollProcessor.ProcessScrolls(scrolls);
 
-                Console.WriteLine($"Successfully Processed {scrolls.Count()} scrolls.");
-                return Ok();
+                var message = $"Successfully Processed {scrolls.Count()} scrolls.\n";
+                Console.WriteLine(message);
+                return Ok(message);
             }
             catch (Exception ex)
             {

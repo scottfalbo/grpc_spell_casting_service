@@ -4,10 +4,10 @@ namespace SpellCastingService.Publishers
 {
     public class ResourceCaster : IResourceCaster
     {
-        public void Cast(Spell spell)
+        public void Evoke(Spell spell)
         {
             Console.WriteLine($"{nameof(ResourceCaster)} has been evoked.");
-            Console.WriteLine($"Casting {spell.Name}, {spell.Description}");
+            spell.Cast();
         }
     }
 }

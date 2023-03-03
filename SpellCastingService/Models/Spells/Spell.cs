@@ -8,6 +8,11 @@
         public SpellType SpellType { get; set; }
         public string Description { get; set; }
 
+        public void Cast()
+        {
+            Console.WriteLine($"\nCasting spell {UniqueGlyph}: {Name}, {Description}\n");
+        }
+
         public string ScryeCompendiumNames((MagicType, SpellType) magicSpellType)
         {
             return magicSpellType switch
@@ -18,7 +23,7 @@
 
                 (MagicType.Elemental, SpellType.Offensive) => Compendium.Name.Elemental.Offensive,
                 (MagicType.Elemental, SpellType.Defensive) => Compendium.Name.Elemental.Defensive,
-                (MagicType.Elemental, SpellType.Resource) => Compendium.Name.Arcane.Resource,
+                (MagicType.Elemental, SpellType.Resource) => Compendium.Name.Elemental.Resource,
 
                 (MagicType.BloodRitual, SpellType.Offensive) => Compendium.Name.BloodRitual.Offensive,
                 (MagicType.BloodRitual, SpellType.Defensive) => Compendium.Name.BloodRitual.Defensive,

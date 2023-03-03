@@ -4,6 +4,6 @@ namespace SpellCastingService.Publishers
 {
     public interface IDefensiveCaster
     {
-        void Cast(Spell spell);
+        void Evoke(Spell spell);
     }
 }
