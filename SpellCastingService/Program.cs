@@ -1,8 +1,18 @@
+using SpellCastingService.Factories;
+using SpellCastingService.Processors;
+using SpellCastingService.Publishers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddTransient<IScrollProcessor, ScrollProcessor>();
+builder.Services.AddTransient<ISpellFactory, SpellFactory>();
+builder.Services.AddTransient<IOffensiveCaster, OffensiveCaster>();
+builder.Services.AddTransient<IDefensiveCaster, DefensiveCaster>();
+builder.Services.AddTransient<IResourceCaster, ResourceCaster>();
 
 var app = builder.Build();
 

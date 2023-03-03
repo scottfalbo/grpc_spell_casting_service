@@ -1,0 +1,9 @@
+﻿using SpellCastingService.Models;
+
+namespace SpellCastingService.Processors
+{
+    public interface IScrollProcessor
+    {
+        void ProcessScroll(Scroll scroll);
+    }
+}
