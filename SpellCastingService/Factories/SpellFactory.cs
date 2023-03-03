@@ -7,6 +7,13 @@ namespace SpellCastingService.Factories
     {
         public Spell CraftSpell(Scroll scroll)
         {
+            switch(scroll.MagicType)
+            {
+                case MagicType.Arcane:
+
+                    break;
+            }
+
             return new ArcaneSpell(scroll);
         }
     }

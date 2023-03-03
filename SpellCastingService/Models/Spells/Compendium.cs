@@ -1,26 +1,26 @@
 ﻿namespace SpellCastingService.Models.Spells
 {
-    public class Compendium
+    public static class Compendium
     {
-        public enum Arcane
+        public static class Arcane
         {
-            MagicMissles = SpellType.Offensive,
-            EnergyShield = SpellType.Defensive,
-            ManaFont = SpellType.Resource
+            public const string Offensive = "Magic Missles";
+            public const string Defensive = "Energy Field";
+            public const string Resource = "Mana Font";
         }
 
-        public enum Elemental
+        public static class Elemental
         {
-            Fireball = SpellType.Offensive,
-            Iceblock = SpellType.Defensive,
-            StaticCharge = SpellType.Resource
+            public const string Offensive = "Fireball";
+            public const string Defensive = "Ice Block";
+            public const string Resource = "Static Charge";
         }
 
-        public enum BloodRitual
+        public static class BloodRitual
         {
-            SoulScythe = SpellType.Offensive,
-            BoneArmor = SpellType.Defensive,
-            LeachEssence = SpellType.Resource
+            public const string Offensive = "Spectral Scythe";
+            public const string Defensive = "Bone Armor";
+            public const string Resource = "Siphon Soul";
         }
     }
 }
