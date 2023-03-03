@@ -39,7 +39,9 @@ namespace SpellCastingService.Processors
 
         private void CastSpell(Spell spell)
         {
-            switch(spell.SpellType)
+            Console.WriteLine($"{nameof(ScrollProcessor)} sending spell with glyph {spell.UniqueGlyph} to be cast.");
+
+            switch (spell.SpellType)
             {
                 case SpellType.Offensive:
                     _offensiveCaster.Cast(spell);

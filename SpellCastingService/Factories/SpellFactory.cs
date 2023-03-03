@@ -7,6 +7,8 @@ namespace SpellCastingService.Factories
     {
         public Spell CraftSpell(Scroll scroll)
         {
+            Console.WriteLine($"{nameof(SpellFactory)} scribing scroll with glyph: {scroll.UniqueGlyph}");
+
             return scroll.MagicType switch
             {
                 MagicType.Arcane => new ArcaneSpell(scroll),
