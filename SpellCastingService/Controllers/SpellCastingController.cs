@@ -22,7 +22,9 @@ namespace SpellCastingService.Controllers
             try
             {
                 Console.WriteLine("Starting Spell Casting Service.");
+
                 _scrollProcessor.ProcessScrolls(scrolls);
+
                 Console.WriteLine($"Successfully Processed {scrolls.Count()} scrolls.");
                 return Ok();
             }
