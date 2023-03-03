@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingService", "SpellCastingService\SpellCastingService.csproj", "{425A9DCF-C8D7-422B-AA17-711C3554DD3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{425A9DCF-C8D7-422B-AA17-711C3554DD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425A9DCF-C8D7-422B-AA17-711C3554DD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425A9DCF-C8D7-422B-AA17-711C3554DD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425A9DCF-C8D7-422B-AA17-711C3554DD3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0A2807F-7234-4273-A422-C50943D6D927}
+	EndGlobalSection
+EndGlobal
