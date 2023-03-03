@@ -1,12 +1,14 @@
 using SpellCastingService.Factories;
 using SpellCastingService.Processors;
 using SpellCastingService.Publishers;
+using SpellCastingService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddGrpc();
 
 builder.Services.AddTransient<IScrollProcessor, ScrollProcessor>();
 builder.Services.AddTransient<ISpellFactory, SpellFactory>();
@@ -23,5 +25,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGrpcService<GrpcCastingService>();
 
 app.Run();

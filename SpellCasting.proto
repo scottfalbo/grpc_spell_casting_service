@@ -1,3 +1,32 @@
 syntax = "proto3";
 
 option csharp_namespace = "SpellCastingService.gRPC";
+
+package server;
+
+service SpellCastingProto {
+	rpc Cast (BundledScrolls) returns (ResponseStatus);
+}
+
+message BundledScrolls{
+	repeated RequestScroll Scrolls = 1;
+	CastingStatus Status = 2;
+}
+
+message RequestScroll {
+    string UniqueGlyph = 1;
+    string CastingPhrase = 2;
+    int32 MagicType = 3;
+    int32 SpellType = 4;
+}
+
+message ResponseStatus {
+	CastingStatus Status = 1;
+	string Message = 2;
+}
+
+enum CastingStatus {
+	Success = 0;
+	Failure = 1;
+	Unknown = 2;
+}
