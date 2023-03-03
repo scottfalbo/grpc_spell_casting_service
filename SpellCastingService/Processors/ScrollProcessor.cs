@@ -4,7 +4,7 @@ namespace SpellCastingService.Processors
 {
     public class ScrollProcessor : IScrollProcessor
     {
-        public void ProcessScroll(Scroll scroll)
+        public void ProcessScrolls(IEnumerable<Scroll> scrolls)
         {
             
         }

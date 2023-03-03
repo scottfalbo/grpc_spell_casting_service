@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SpellCastingService.Models;
+using SpellCastingService.Processors;
 
 namespace SpellCastingService.Controllers
 {
@@ -7,12 +8,30 @@ namespace SpellCastingService.Controllers
     [Route("[controller]")]
     public class SpellCastingController : ControllerBase
     {
-        [Route("castspell/{spellName}")]
+        private readonly IScrollProcessor _scrollProcessor;
+
+        public SpellCastingController(IScrollProcessor scrollProcessor) 
+        {
+            _scrollProcessor = scrollProcessor;
+        }
+
+        [Route("cast")]
         [HttpGet]
         public IActionResult Cast([FromBody] IEnumerable<Scroll> scrolls)
         {
-            // call processor with scroll
-            return Ok();
+            try
+            {
+                Console.WriteLine("Starting Spell Casting Service.");
+                _scrollProcessor.ProcessScrolls(scrolls);
+                Console.WriteLine($"Successfully Processed {scrolls.Count()} scrolls.");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Something went amiss, {ex.Message}");
+                return BadRequest(ex);
+            }
+            
         }
     }
 }
