@@ -4,11 +4,13 @@
     {
         public ArcaneSpell(Scroll scroll) 
         {
-            Name = ScryeCompendium((scroll.MagicType, scroll.SpellType));
+            var magicSpellType = (scroll.MagicType, scroll.SpellType);
+
+            Name = ScryeCompendiumNames(magicSpellType);
             UniqueGlyph = scroll.UniqueGlyph;
             MagicType = scroll.MagicType;
             SpellType = scroll.SpellType;
-            Description = "";
+            Description = ScryeCompendiumDescriptions(magicSpellType);
         }
     }
 }

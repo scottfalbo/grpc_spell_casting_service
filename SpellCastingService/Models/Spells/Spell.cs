@@ -8,23 +8,43 @@
         public SpellType SpellType { get; set; }
         public string Description { get; set; }
 
-        public string ScryeCompendium((MagicType, SpellType) magicSpellType)
+        public string ScryeCompendiumNames((MagicType, SpellType) magicSpellType)
         {
             return magicSpellType switch
             {
-                (MagicType.Arcane, SpellType.Offensive) => Compendium.Arcane.Offensive,
-                (MagicType.Arcane, SpellType.Defensive) => Compendium.Arcane.Defensive,
-                (MagicType.Arcane, SpellType.Resource) => Compendium.Arcane.Resource,
+                (MagicType.Arcane, SpellType.Offensive) => Compendium.Name.Arcane.Offensive,
+                (MagicType.Arcane, SpellType.Defensive) => Compendium.Name.Arcane.Defensive,
+                (MagicType.Arcane, SpellType.Resource) => Compendium.Name.Arcane.Resource,
 
-                (MagicType.Elemental, SpellType.Offensive) => Compendium.Elemental.Offensive,
-                (MagicType.Elemental, SpellType.Defensive) => Compendium.Elemental.Defensive,
-                (MagicType.Elemental, SpellType.Resource) => Compendium.Elemental.Resource,
+                (MagicType.Elemental, SpellType.Offensive) => Compendium.Name.Elemental.Offensive,
+                (MagicType.Elemental, SpellType.Defensive) => Compendium.Name.Elemental.Defensive,
+                (MagicType.Elemental, SpellType.Resource) => Compendium.Name.Arcane.Resource,
 
-                (MagicType.BloodRitual, SpellType.Offensive) => Compendium.BloodRitual.Offensive,
-                (MagicType.BloodRitual, SpellType.Defensive) => Compendium.BloodRitual.Defensive,
-                (MagicType.BloodRitual, SpellType.Resource) => Compendium.BloodRitual.Resource,
+                (MagicType.BloodRitual, SpellType.Offensive) => Compendium.Name.Arcane.Offensive,
+                (MagicType.BloodRitual, SpellType.Defensive) => Compendium.Name.Arcane.Defensive,
+                (MagicType.BloodRitual, SpellType.Resource) => Compendium.Name.Arcane.Resource,
 
                 _ => "Nameless",
+            };
+        }
+
+        public string ScryeCompendiumDescriptions((MagicType, SpellType) magicSpellType)
+        {
+            return magicSpellType switch
+            {
+                (MagicType.Arcane, SpellType.Offensive) => Compendium.Description.Arcane.Offensive,
+                (MagicType.Arcane, SpellType.Defensive) => Compendium.Description.Arcane.Defensive,
+                (MagicType.Arcane, SpellType.Resource) => Compendium.Description.Arcane.Resource,
+
+                (MagicType.Elemental, SpellType.Offensive) => Compendium.Description.Elemental.Offensive,
+                (MagicType.Elemental, SpellType.Defensive) => Compendium.Description.Elemental.Defensive,
+                (MagicType.Elemental, SpellType.Resource) => Compendium.Description.Arcane.Resource,
+
+                (MagicType.BloodRitual, SpellType.Offensive) => Compendium.Description.Arcane.Offensive,
+                (MagicType.BloodRitual, SpellType.Defensive) => Compendium.Description.Arcane.Defensive,
+                (MagicType.BloodRitual, SpellType.Resource) => Compendium.Description.Arcane.Resource,
+
+                _ => "nothing happened",
             };
         }
     }
