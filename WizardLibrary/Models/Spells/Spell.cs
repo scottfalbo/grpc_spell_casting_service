@@ -13,7 +13,7 @@
             Console.WriteLine($"\nCasting spell {UniqueGlyph}: {Name}, {Description}\n");
         }
 
-        public string ScryeCompendiumNames((MagicType, SpellType) magicSpellType)
+        public static string ScryeCompendiumNames((MagicType, SpellType) magicSpellType)
         {
             return magicSpellType switch
             {
@@ -33,7 +33,7 @@
             };
         }
 
-        public string ScryeCompendiumDescriptions((MagicType, SpellType) magicSpellType)
+        public static string ScryeCompendiumDescriptions((MagicType, SpellType) magicSpellType)
         {
             return magicSpellType switch
             {
