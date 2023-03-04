@@ -10,7 +10,6 @@ namespace SpellCastingClient
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<Worker>();
-                    services.AddTransient<IScrollFactory, ScrollFactory>();
                 })
                 .Build();
 

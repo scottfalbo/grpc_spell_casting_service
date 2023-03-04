@@ -1,17 +1,16 @@
 using Grpc.Net.Client;
 using SpellCastingService.gRPC;
-using WizardLibrary.Factories;
 using static SpellCastingService.gRPC.SpellCastingProto;
 
 namespace SpellCastingClient
 {
     public class Worker : BackgroundService
     {
-        private readonly IScrollFactory _scrollFactory;
+        private readonly Random _random;
 
-        public Worker(IScrollFactory scrollFactory)
+        public Worker()
         {
-            _scrollFactory = scrollFactory;
+            _random = new();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -23,11 +22,30 @@ namespace SpellCastingClient
 
                 var bundledScrolls = new BundledScrolls()
                 {
-                    Status = CastingStatus.Unknown
+                    Status = CastingStatus.Unknown,
                 };
+
+                bundledScrolls.Scrolls.AddRange(CreateRandomScroll());
+
+                client.Cast(bundledScrolls);
 
                 await Task.Delay(10000, stoppingToken);
             }
+        }
+
+        private List<RequestScroll> CreateRandomScroll()
+        {
+            return new List<RequestScroll>()
+            {
+                new RequestScroll()
+                {
+                    UniqueGlyph = Guid.NewGuid().ToString(),
+                    CastingPhrase = "sha zam",
+                    MagicType = _random.Next(3),
+                    SpellType = _random.Next(3)
+                }
+            };
+
         }
     }
 }
