@@ -1,3 +1,6 @@
+using Grpc.Net.Client;
+using static SpellCastingService.gRPC.SpellCastingProto;
+
 namespace SpellCastingClient
 {
     public class Worker : BackgroundService
@@ -13,7 +16,9 @@ namespace SpellCastingClient
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                
+                var channel = GrpcChannel.ForAddress("https://localhost:7216"); //grpc://localhost:7216
+                var client = new SpellCastingProtoClient(channel);
+
                 await Task.Delay(1000, stoppingToken);
             }
         }
