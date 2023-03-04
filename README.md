@@ -1,5 +1,7 @@
 # grpc_spell_casting_service
 
+## Server
+
 `https://localhost:xxxx/spellcasting/cast`
 
 ```json
@@ -51,3 +53,9 @@
 2.0: Spectral Scythe
 2.1: Bone Armor
 2.2: SIphon Soul
+
+## Client
+
+`dotnet tool install dotnet-grpc -g`
+
+`dotnet grpc add-file ..\SpellCasting.proto -i ..`
