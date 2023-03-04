@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using SpellCastingService.Factories;
+﻿using SpellCastingService.Factories;
 using SpellCastingService.Models;
 using SpellCastingService.Models.Spells;
 using SpellCastingService.Publishers;

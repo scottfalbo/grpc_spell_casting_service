@@ -12,6 +12,9 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Protobuf Include="..\SpellCasting.proto" GrpcServices="Client" AdditionalImportDirs=".." Link="Protos\SpellCasting.proto" />
   </ItemGroup>
 </Project>

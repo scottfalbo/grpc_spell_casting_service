@@ -11,9 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingClient", "SpellCastingClient\SpellCastingClient.csproj", "{986FF1BA-3619-4D14-A61F-48F0872BB994}"
-	ProjectSection(ProjectDependencies) = postProject
-		{425A9DCF-C8D7-422B-AA17-711C3554DD3F} = {425A9DCF-C8D7-422B-AA17-711C3554DD3F}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardLibrary", "WizardLibrary\WizardLibrary.csproj", "{93A6747E-754A-4815-A8FA-247ACC55E10A}"
 EndProject
