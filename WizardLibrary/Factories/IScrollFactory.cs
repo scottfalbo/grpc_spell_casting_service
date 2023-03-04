@@ -4,6 +4,6 @@ namespace WizardLibrary.Factories
 {
     public interface IScrollFactory
     {
-        List<Scroll> CreateRandomHttpScroll();
+        List<Scroll> CreateRandomScroll();
     }
 }

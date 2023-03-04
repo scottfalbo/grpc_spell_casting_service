@@ -6,7 +6,7 @@ namespace WizardLibrary.Factories
     {
         private readonly Random _random = new Random();
 
-        public List<Scroll> CreateRandomHttpScroll()
+        public List<Scroll> CreateRandomScroll()
         {
             return new List<Scroll>()
             {
