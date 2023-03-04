@@ -3,14 +3,22 @@ using SpellCastingService.gRPC;
 using static SpellCastingService.gRPC.SpellCastingProto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SpellCastingClientUI.Clients;
+using System;
 
 namespace SpellCastingClientUI.Pages
 {
     public class IndexModel : PageModel
     {
-        public IndexModel()
-        {
+        private readonly IHttpSpellClient _httpClient;
+        private readonly IGrpcSpellClient _grpcClient;
+        private readonly Random _random;
 
+        public IndexModel(IHttpSpellClient httpClient, IGrpcSpellClient grpcClient)
+        {
+            _httpClient = httpClient;
+            _grpcClient = grpcClient;
+            _random = new();
         }
 
         public void OnGet()

@@ -27,6 +27,9 @@ namespace SpellCastingClient
 
                 bundledScrolls.Scrolls.AddRange(CreateRandomScroll());
 
+                var scrollGlyph = bundledScrolls.Scrolls.First().UniqueGlyph;
+                Console.WriteLine($"Sending scroll with uniqueGlyph: {scrollGlyph}\n");
+
                 client.Cast(bundledScrolls);
 
                 await Task.Delay(10000, stoppingToken);
@@ -45,7 +48,6 @@ namespace SpellCastingClient
                     SpellType = _random.Next(3)
                 }
             };
-
         }
     }
 }

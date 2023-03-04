@@ -3,18 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingService", "SpellCastingService\SpellCastingService.csproj", "{425A9DCF-C8D7-422B-AA17-711C3554DD3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpellCastingService", "SpellCastingService\SpellCastingService.csproj", "{425A9DCF-C8D7-422B-AA17-711C3554DD3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{497C66EF-2010-496A-B33A-C70B4E5C0BBB}"
 	ProjectSection(SolutionItems) = preProject
 		SpellCasting.proto = SpellCasting.proto
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingWorker", "SpellCastingClient\SpellCastingWorker.csproj", "{986FF1BA-3619-4D14-A61F-48F0872BB994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpellCastingWorker", "SpellCastingClient\SpellCastingWorker.csproj", "{986FF1BA-3619-4D14-A61F-48F0872BB994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardLibrary", "WizardLibrary\WizardLibrary.csproj", "{93A6747E-754A-4815-A8FA-247ACC55E10A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellCastingClientUI", "SpellCastingClientUI\SpellCastingClientUI.csproj", "{52C915FC-B56A-4A6F-BF11-3B60EE655824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WizardLibrary", "WizardLibrary\WizardLibrary.csproj", "{93A6747E-754A-4815-A8FA-247ACC55E10A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +32,6 @@ Global
 		{93A6747E-754A-4815-A8FA-247ACC55E10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A6747E-754A-4815-A8FA-247ACC55E10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A6747E-754A-4815-A8FA-247ACC55E10A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52C915FC-B56A-4A6F-BF11-3B60EE655824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52C915FC-B56A-4A6F-BF11-3B60EE655824}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52C915FC-B56A-4A6F-BF11-3B60EE655824}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52C915FC-B56A-4A6F-BF11-3B60EE655824}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

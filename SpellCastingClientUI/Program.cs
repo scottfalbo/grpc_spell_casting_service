@@ -1,4 +1,5 @@
 using SpellCastingClientUI.Clients;
+using WizardLibrary.Factories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<IHttpSpellClient, HttpSpellClient>();
 builder.Services.AddTransient<IGrpcSpellClient, GrpcSpellClient>();
+builder.Services.AddTransient<IScrollFactory, ScrollFactory>();
 
 var app = builder.Build();
 

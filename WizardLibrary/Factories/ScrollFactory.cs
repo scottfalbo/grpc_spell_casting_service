@@ -1,10 +1,23 @@
 ﻿using SpellCastingService.Models;
-using System.Runtime.CompilerServices;
 
 namespace WizardLibrary.Factories
 {
     public class ScrollFactory : IScrollFactory
     {
+        private readonly Random _random = new Random();
 
+        public List<Scroll> CreateRandomHttpScroll()
+        {
+            return new List<Scroll>()
+            {
+                new Scroll()
+                {
+                    UniqueGlyph = Guid.NewGuid().ToString(),
+                    CastingPhrase = "sha zam",
+                    MagicType = (MagicType)_random.Next(3),
+                    SpellType = (SpellType)_random.Next(3)
+                }
+            };
+        }
     }
 }
