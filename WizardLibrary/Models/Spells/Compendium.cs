@@ -6,7 +6,7 @@
         {
             public static class Arcane
             {
-                public const string Offensive = "Magic Missles";
+                public const string Offensive = "Magic Missiles";
                 public const string Defensive = "Energy Field";
                 public const string Resource = "Mana Font";
             }
