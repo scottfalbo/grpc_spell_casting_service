@@ -9,11 +9,9 @@ namespace SpellCastingClient
     public class Worker : BackgroundService
     {
         private readonly IScrollFactory _scrollFactory;
-        private readonly Random _random;
 
         public Worker(IScrollFactory scrollFactory)
         {
-            _random = new();
             _scrollFactory = scrollFactory;
         }
 
