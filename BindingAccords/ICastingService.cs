@@ -1,5 +1,7 @@
 ﻿using Grpc.Core;
+using ProtoBuf.Grpc;
 using System.ServiceModel;
+using System.Threading.Tasks;
 using static BindingAccords.Bindings;
 
 namespace BindingAccords
@@ -8,6 +10,6 @@ namespace BindingAccords
     public interface ICastingService
     {
         [OperationContract]
-        ResponseStatus Cast(BundledScrolls request, ServerCallContext context);
+        Task<ResponseStatus> Cast(BundledScrolls request, CallContext context = default);
     }
 }

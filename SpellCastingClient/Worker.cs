@@ -1,5 +1,6 @@
 using BindingAccords;
 using Grpc.Net.Client;
+using ProtoBuf.Grpc;
 using ProtoBuf.Grpc.Client;
 using SpellCastingWorker;
 using WizardLibrary.Factories;
@@ -36,7 +37,7 @@ namespace SpellCastingClient
                 var scrollGlyph = bundledScrolls.Scrolls.First().UniqueGlyph;
                 Console.WriteLine($"Sending scroll with uniqueGlyph: {scrollGlyph}\n");
 
-                client.Cast(bundledScrolls, default);
+                await client.Cast(bundledScrolls);
 
                 await Task.Delay(10000, stoppingToken);
             }

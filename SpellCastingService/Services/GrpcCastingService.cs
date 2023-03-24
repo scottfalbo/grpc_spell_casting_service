@@ -1,6 +1,7 @@
 ﻿
 using BindingAccords;
 using Grpc.Core;
+using ProtoBuf.Grpc;
 using SpellCastingService.Models;
 using SpellCastingService.Processors;
 using static BindingAccords.Bindings;
@@ -16,7 +17,7 @@ namespace SpellCastingService.Services
             _scrollProcessor = scrollProcessor;
         }
 
-        public ResponseStatus Cast(BundledScrolls request, ServerCallContext context)
+        public Task<ResponseStatus> Cast(BundledScrolls request, CallContext context)
         {
             var scrolls = UnbundleScrolls(request);
 
@@ -35,7 +36,7 @@ namespace SpellCastingService.Services
                 Console.WriteLine(message);
 
                 responseStatus.Message = message;
-                return responseStatus;
+                return Task.FromResult(responseStatus);
             }
             catch (Exception ex)
             {
@@ -43,7 +44,7 @@ namespace SpellCastingService.Services
                 Console.WriteLine(message);
 
                 responseStatus.Message = message;
-                return responseStatus;
+                return Task.FromResult(responseStatus);
             }
         }
 
