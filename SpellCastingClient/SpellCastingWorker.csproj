@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -6,12 +6,7 @@
     <UserSecretsId>dotnet-SpellCastingClient-fc0de4a3-7335-42fe-b97a-8d7bfefb5081</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.52.0" />
-    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.52.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.52.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
