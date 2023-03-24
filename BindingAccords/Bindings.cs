@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 
 namespace BindingAccords
 {
-    [DataContract]
     public class Bindings
     {
+        [DataContract]
         public class BundledScrolls
         {
             public BundledScrolls()
@@ -20,6 +20,7 @@ namespace BindingAccords
             public CastingStatus Status { get; set; }
         }
 
+        [DataContract]
         public class RequestScroll
         {
             [DataMember(Order = 1)]
@@ -35,6 +36,7 @@ namespace BindingAccords
             public int SpellType { get; set; }
         }
 
+        [DataContract]
         public class ResponseStatus
         {
             [DataMember(Order = 1)]
@@ -44,6 +46,7 @@ namespace BindingAccords
             public string Message { get; set; }
         }
 
+        [DataContract]
         public enum CastingStatus
         {
             Success = 0,
