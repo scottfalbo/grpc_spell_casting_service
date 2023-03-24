@@ -10,11 +10,10 @@
     <PackageReference Include="Grpc.Net.ClientFactory" Version="2.32.0" />
     <PackageReference Include="Grpc.Tools" Version="2.32.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Protobuf Include="..\SpellCasting.proto" GrpcServices="Client" AdditionalImportDirs=".." Link="Protos\SpellCasting.proto" />
   </ItemGroup>
 </Project>

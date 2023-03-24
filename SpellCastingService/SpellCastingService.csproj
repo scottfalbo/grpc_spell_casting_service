@@ -14,10 +14,4 @@
     <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="..\SpellCasting.proto" GrpcServices="Server">
-      <Link>Protos\SpellCasting.proto</Link>
-    </Protobuf>
-  </ItemGroup>
-
 </Project>
