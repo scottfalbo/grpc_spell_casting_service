@@ -1,5 +1,5 @@
-﻿using SpellCastingService.gRPC;
-using SpellCastingService.Models;
+﻿using SpellCastingService.Models;
+using static BindingAccords.Bindings;
 
 namespace SpellCastingWorker
 {

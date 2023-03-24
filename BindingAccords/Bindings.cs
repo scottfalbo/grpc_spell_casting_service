@@ -8,6 +8,11 @@ namespace BindingAccords
     {
         public class BundledScrolls
         {
+            public BundledScrolls()
+            { 
+                Scrolls = new List<RequestScroll>();
+            }
+
             [DataMember(Order = 1)]
             public List<RequestScroll> Scrolls { get; set; }
 

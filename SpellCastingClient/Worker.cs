@@ -1,8 +1,9 @@
+using BindingAccords;
 using Grpc.Net.Client;
-using SpellCastingService.gRPC;
+using ProtoBuf.Grpc.Client;
 using SpellCastingWorker;
 using WizardLibrary.Factories;
-using static SpellCastingService.gRPC.SpellCastingProto;
+using static BindingAccords.Bindings;
 
 namespace SpellCastingClient
 {
@@ -20,11 +21,11 @@ namespace SpellCastingClient
             while (!stoppingToken.IsCancellationRequested)
             {
                 var channel = GrpcChannel.ForAddress("https://localhost:7216"); //grpc://localhost:7216
-                var client = new SpellCastingProtoClient(channel);
+                var client = channel.CreateGrpcService<ICastingService>();
 
                 var bundledScrolls = new BundledScrolls()
                 {
-                    Status = CastingStatus.Unknown,
+                    Status = CastingStatus.Unknown
                 };
 
                 var scrolls = _scrollFactory.CreateRandomScroll();
@@ -35,7 +36,7 @@ namespace SpellCastingClient
                 var scrollGlyph = bundledScrolls.Scrolls.First().UniqueGlyph;
                 Console.WriteLine($"Sending scroll with uniqueGlyph: {scrollGlyph}\n");
 
-                client.Cast(bundledScrolls);
+                client.Cast(bundledScrolls, default);
 
                 await Task.Delay(10000, stoppingToken);
             }

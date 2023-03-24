@@ -1,13 +1,13 @@
-﻿using Google.Protobuf;
+﻿
+using BindingAccords;
 using Grpc.Core;
-using SpellCastingService.gRPC;
 using SpellCastingService.Models;
 using SpellCastingService.Processors;
-using static SpellCastingService.gRPC.SpellCastingProto;
+using static BindingAccords.Bindings;
 
 namespace SpellCastingService.Services
 {
-    public class GrpcCastingService : SpellCastingProtoBase
+    public class GrpcCastingService : ICastingService
     {
         private readonly IScrollProcessor _scrollProcessor;
 
@@ -16,7 +16,7 @@ namespace SpellCastingService.Services
             _scrollProcessor = scrollProcessor;
         }
 
-        public async override Task<ResponseStatus> Cast(BundledScrolls request, ServerCallContext context)
+        public ResponseStatus Cast(BundledScrolls request, ServerCallContext context)
         {
             var scrolls = UnbundleScrolls(request);
 
