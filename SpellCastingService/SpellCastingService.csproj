@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BindingAccords\BindingAccords.csproj" />
     <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
   </ItemGroup>
 
