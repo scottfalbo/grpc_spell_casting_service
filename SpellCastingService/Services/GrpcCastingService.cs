@@ -1,6 +1,4 @@
-﻿
-using BindingAccords;
-using Grpc.Core;
+﻿using BindingAccords;
 using ProtoBuf.Grpc;
 using SpellCastingService.Models;
 using SpellCastingService.Processors;

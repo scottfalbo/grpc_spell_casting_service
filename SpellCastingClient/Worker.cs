@@ -1,6 +1,5 @@
 using BindingAccords;
 using Grpc.Net.Client;
-using ProtoBuf.Grpc;
 using ProtoBuf.Grpc.Client;
 using SpellCastingWorker;
 using WizardLibrary.Factories;

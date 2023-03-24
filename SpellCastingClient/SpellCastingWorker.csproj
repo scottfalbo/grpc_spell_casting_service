@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BindingAccords\BindingAccords.csproj" />
+    <ProjectReference Include="..\SpellCastingService\SpellCastingService.csproj" />
     <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿using Grpc.Core;
-using ProtoBuf.Grpc;
+﻿using ProtoBuf.Grpc;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using static BindingAccords.Bindings;
