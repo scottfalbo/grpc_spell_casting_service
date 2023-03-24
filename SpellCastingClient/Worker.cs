@@ -1,6 +1,5 @@
 using BindingAccords;
 using Grpc.Net.Client;
-using ProtoBuf.Grpc;
 using ProtoBuf.Grpc.Client;
 using SpellCastingWorker;
 using WizardLibrary.Factories;
@@ -17,14 +16,14 @@ namespace SpellCastingClient
             _scrollFactory = scrollFactory;
         }
 
-        public Task<ResponseStatus> Cast(BundledScrolls request, CallContext context = default)
+        public async Task<ResponseStatus> Cast(BundledScrolls request)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7216"); //grpc://localhost:7216
             var client = channel.CreateGrpcService<ICastingService>();
 
-            var response = client.Cast(request);
+            var response = await client.Cast(request);
 
-            return Task.FromResult(response.Result);
+            return response;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

@@ -15,7 +15,7 @@ namespace SpellCastingService.Services
             _scrollProcessor = scrollProcessor;
         }
 
-        public Task<ResponseStatus> Cast(BundledScrolls request, CallContext context)
+        public async Task<ResponseStatus> Cast(BundledScrolls request)
         {
             var scrolls = UnbundleScrolls(request);
 
@@ -34,7 +34,7 @@ namespace SpellCastingService.Services
                 Console.WriteLine(message);
 
                 responseStatus.Message = message;
-                return Task.FromResult(responseStatus);
+                return responseStatus;
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace SpellCastingService.Services
                 Console.WriteLine(message);
 
                 responseStatus.Message = message;
-                return Task.FromResult(responseStatus);
+                return responseStatus;
             }
         }
 
