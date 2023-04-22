@@ -1,12 +1,13 @@
+using BindingAccords;
 using Grpc.Net.Client;
-using SpellCastingService.gRPC;
+using ProtoBuf.Grpc.Client;
 using SpellCastingWorker;
 using WizardLibrary.Factories;
-using static SpellCastingService.gRPC.SpellCastingProto;
+using static BindingAccords.Bindings;
 
 namespace SpellCastingClient
 {
-    public class Worker : BackgroundService
+    public class Worker : BackgroundService, ICastingService
     {
         private readonly IScrollFactory _scrollFactory;
 
@@ -15,16 +16,23 @@ namespace SpellCastingClient
             _scrollFactory = scrollFactory;
         }
 
+        public async Task<ResponseStatus> Cast(BundledScrolls request)
+        {
+            var channel = GrpcChannel.ForAddress("https://localhost:7216"); //grpc://localhost:7216
+            var client = channel.CreateGrpcService<ICastingService>();
+
+            var response = await client.Cast(request);
+
+            return response;
+        }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var channel = GrpcChannel.ForAddress("https://localhost:7216"); //grpc://localhost:7216
-                var client = new SpellCastingProtoClient(channel);
-
                 var bundledScrolls = new BundledScrolls()
                 {
-                    Status = CastingStatus.Unknown,
+                    Status = CastingStatus.Unknown
                 };
 
                 var scrolls = _scrollFactory.CreateRandomScroll();
@@ -35,7 +43,7 @@ namespace SpellCastingClient
                 var scrollGlyph = bundledScrolls.Scrolls.First().UniqueGlyph;
                 Console.WriteLine($"Sending scroll with uniqueGlyph: {scrollGlyph}\n");
 
-                client.Cast(bundledScrolls);
+                await Cast(bundledScrolls);
 
                 await Task.Delay(10000, stoppingToken);
             }

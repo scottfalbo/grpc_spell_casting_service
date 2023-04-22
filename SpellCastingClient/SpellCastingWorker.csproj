@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -6,15 +6,14 @@
     <UserSecretsId>dotnet-SpellCastingClient-fc0de4a3-7335-42fe-b97a-8d7bfefb5081</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.13.0" />
-    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.32.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.32.0" PrivateAssets="All" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="protobuf-net.Grpc" Version="1.1.1" />
+    <PackageReference Include="System.Text.Json" Version="7.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BindingAccords\BindingAccords.csproj" />
+    <ProjectReference Include="..\SpellCastingService\SpellCastingService.csproj" />
     <ProjectReference Include="..\WizardLibrary\WizardLibrary.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Protobuf Include="..\SpellCasting.proto" GrpcServices="Client" AdditionalImportDirs=".." Link="Protos\SpellCasting.proto" />
   </ItemGroup>
 </Project>

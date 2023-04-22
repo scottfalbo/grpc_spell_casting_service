@@ -1,11 +1,19 @@
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using ProtoBuf.Grpc.Server;
 using SpellCastingService.Factories;
 using SpellCastingService.Processors;
 using SpellCastingService.Publishers;
 using SpellCastingService.Services;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCodeFirstGrpc(config =>
+{
+    config.ResponseCompressionLevel = System.IO.Compression.CompressionLevel.Optimal;
+});
 
 builder.Services.AddControllers();
 builder.Services.AddGrpc();
